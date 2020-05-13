@@ -5,9 +5,8 @@ const playstore = require('./playstore')
 
 const app = express();
 app.use(morgan('common'));
-app.listen(8000, () => {
-    console.log('Server started')
-})
+
+
 
 app.get('/apps', (req,res) => {
     let apps = playstore
@@ -49,6 +48,8 @@ app.get('/apps', (req,res) => {
        apps = newApps 
     }
 
-   console.log(genre) 
+   //console.log(genre) 
    res.send(apps)
 })
+
+module.exports = app;
